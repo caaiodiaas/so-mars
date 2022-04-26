@@ -13,10 +13,9 @@ public class TabelaDeProcessos {
 
     public static void addReady (long address, State state){
         PCB process = new PCB(address);
-        prontos.add(process);
         process.setPid(process.getPid()+ 1);
-        process.setState(state);
-        Escalonador.schedule(process);        
+        process.setState(state);  
+        prontos.add(process);
     }
 
     public static void addProcess(PCB process){
